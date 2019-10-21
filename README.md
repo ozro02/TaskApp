@@ -42,3 +42,5 @@ $ rails server
 
 * **email** : sample@email.com
 * **password** : password
+
+2019/10/21 SSHkey設定完了
