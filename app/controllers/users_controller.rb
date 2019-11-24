@@ -1,13 +1,15 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i(show edit update destroy)
   before_action :logged_in_user, only: %i(index show edit update destroy)
   
+  def index
+    @users = User.paginate(page: params[:page], per_page: 20)
+  end
+  
   def show
-    @user = User.find(params[:id])
   end
 
   def new
-    if logged_in? && !current_user.admin?
+    if logged_in?
       flash[:info] = 'すでにログインしています。'
       redirect_to current_user
     end
