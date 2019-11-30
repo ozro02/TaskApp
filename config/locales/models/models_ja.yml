@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      task: タスク
     attributes:
         user:
           id: ID

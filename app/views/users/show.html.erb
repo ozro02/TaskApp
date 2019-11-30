@@ -1,4 +1,4 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, current_user.name) %>
 
 <h1>プロフィール</h1>
 
@@ -7,19 +7,19 @@
     <table class="table table-bordered" id="table-user">
       <tr>
         <th class="active col-md-3"><%= User.human_attribute_name :id %></th>
-        <td class="col-md-9"><%= @user.id %></td>
+        <td class="col-md-9"><%= current_user.id %></td>
       </tr>
       <tr>
         <th class="active"><%= User.human_attribute_name :name %></th>
-        <td><%= @user.name %></td>
+        <td><%= current_user.name %></td>
       </tr>
       <tr>
         <th class="active"><%= User.human_attribute_name :email %></th>
-        <td><%= @user.email %></td>
+        <td><%= current_user.email %></td>
       </tr>
       <tr>
         <th class="active"><%= User.human_attribute_name :created_at %></th>
-        <td><%= l(@user.created_at, format: :long) %></td>
+        <td><%= l(current_user.created_at, format: :long) %></td>
       </tr>
     </table>
   </div>    
