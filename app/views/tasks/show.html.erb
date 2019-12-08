@@ -18,6 +18,7 @@
           <th class="active"><%= Task.human_attribute_name :description %></th>
           <td>
             <%= @task.description %>
+            <%= text_url_to_link(h(@text)).html_safe %>
           </td>
         </tr>
         <tr>
