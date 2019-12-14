@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
   require "uri"
 
   def description_url_to_link(description)
