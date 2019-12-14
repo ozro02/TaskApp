@@ -5,9 +5,11 @@ module ApplicationHelper
   def description_url_to_link(description)
  
     URI.extract(description, ["http", "https"]).uniq.each do |url|
-      description.gsub!(url, "#{url}")
+      sub_description = ""
+      sub_description << "<a href=" << url << " target=\"_blank\">" << url << "</a>"
+      description.gsub!(url, sub_description)
     end
-    description
+    return description
   end
 
   def full_title(page_name = "")

@@ -17,7 +17,7 @@
         <tr>
           <th class="active"><%= Task.human_attribute_name :description %></th>
           <td>
-            <%= description_url_to_link(@task.description).html_safe %>
+            <%= description_url_to_link(h(@task.description)).html_safe %>
           </td>
         </tr>
         <tr>
