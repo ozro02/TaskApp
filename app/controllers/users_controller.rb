@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
   end
 
   def new
@@ -32,7 +31,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
   end
   
   def update
@@ -73,12 +71,12 @@ class UsersController < ApplicationController
       end
     end
 
-     アクセスしたユーザーが現在ログインしているユーザーか確認します。
+    # アクセスしたユーザーが現在ログインしているユーザーか確認します。
     def correct_user
-      redirect_to(root_url) unless current_user?(@user)
+      redirect_to root_url unless current_user?(@user)
     end
     
-     システム管理権限所有かどうか判定します。
+    # システム管理権限所有かどうか判定します。
     def admin_user
       redirect_to root_url unless current_user.admin?
     end
